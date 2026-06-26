@@ -137,6 +137,13 @@
     </div>
   </header>
 
+  <!-- ============ DEALER STRIP (después del logo) ============ -->
+  <div class="flex w-full justify-center px-4 pt-5">
+    <span class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-soft">
+      <i data-lucide="sparkles" class="h-4 w-4"></i> Dealer Autorizado
+    </span>
+  </div>
+
   <main>
     <!-- ============ HERO ============ -->
     <section id="inicio" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 lg:pt-14 pb-10">
@@ -164,11 +171,11 @@
 
         <!-- Image + floating card -->
         <div class="relative lg:col-start-2 lg:row-span-2 lg:row-start-1">
-          <div class="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-50 to-gray-100">
+          <div class="relative z-0 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-50 to-gray-100">
             <img src="imagenes/familia.png" alt="Familia conectada en casa" class="w-full object-cover" />
           </div>
           <!-- Features card -->
-          <div class="mx-auto -mt-10 w-[92%] sm:absolute sm:bottom-6 sm:right-6 sm:mt-0 sm:w-64 rounded-2xl bg-white p-4 shadow-card">
+          <div class="relative z-10 mx-auto -mt-14 w-[92%] sm:absolute sm:bottom-6 sm:right-6 sm:mt-0 sm:w-64 rounded-2xl bg-white p-4 shadow-card ring-1 ring-black/5">
             <ul class="space-y-3 text-sm font-semibold">
               <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:rocket" width="22"></iconify-icon></span> Instalación rápida</li>
               <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:clapper-board" width="22"></iconify-icon></span> Planes para streaming</li>
@@ -180,48 +187,48 @@
         </div>
 
         <!-- Social proof -->
-        <div class="flex items-center gap-3 lg:col-start-1 lg:row-start-2">
-          <div class="flex -space-x-2">
-            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=1" alt="">
-            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=5" alt="">
-            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=12" alt="">
-            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=20" alt="">
+        <div class="mt-2 flex items-center gap-3 lg:col-start-1 lg:row-start-2">
+          <div class="flex -space-x-2 shrink-0">
+            <img class="h-9 w-9 rounded-full ring-2 ring-paper object-cover" src="https://i.pravatar.cc/64?img=1" alt="">
+            <img class="h-9 w-9 rounded-full ring-2 ring-paper object-cover" src="https://i.pravatar.cc/64?img=5" alt="">
+            <img class="h-9 w-9 rounded-full ring-2 ring-paper object-cover" src="https://i.pravatar.cc/64?img=12" alt="">
+            <img class="h-9 w-9 rounded-full ring-2 ring-paper object-cover" src="https://i.pravatar.cc/64?img=20" alt="">
           </div>
-          <span class="text-sm font-medium text-gray-600">20,000+ hogares conectados</span>
+          <span class="text-sm font-semibold text-gray-700"><span class="text-brand">20,000+</span> hogares conectados</span>
         </div>
       </div>
     </section>
 
     <!-- ============ BENEFITS BAR ============ -->
     <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
-      <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-card">
-        <div class="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-gray-100">
-          <div class="lg:px-6">
+      <div class="rounded-2xl bg-white p-5 sm:p-8 shadow-card">
+        <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-4 lg:divide-x lg:divide-gray-100">
+          <div class="min-w-0 lg:px-6">
             <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
               <iconify-icon icon="fluent-emoji-flat:high-voltage" width="32"></iconify-icon>
             </span>
-            <h3 class="font-display font-bold">Alta velocidad</h3>
+            <h3 class="font-display font-bold text-[15px] leading-tight sm:text-base">Alta velocidad</h3>
             <p class="mt-1 text-sm text-gray-500">Disfruta de la mejor velocidad para todo lo que importa.</p>
           </div>
-          <div class="lg:px-6">
+          <div class="min-w-0 lg:px-6">
             <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
               <iconify-icon icon="fluent-emoji-flat:television" width="32"></iconify-icon>
             </span>
-            <h3 class="font-display font-bold">Entretenimiento</h3>
+            <h3 class="font-display font-bold text-[15px] leading-tight sm:text-base">Entretenimiento</h3>
             <p class="mt-1 text-sm text-gray-500">TV en vivo y streaming para toda la familia.</p>
           </div>
-          <div class="lg:px-6">
+          <div class="min-w-0 lg:px-6">
             <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
               <iconify-icon icon="fluent-emoji-flat:house-with-garden" width="32"></iconify-icon>
             </span>
-            <h3 class="font-display font-bold">Cobertura residencial</h3>
+            <h3 class="font-display font-bold text-[15px] leading-tight sm:text-base">Cobertura residencial</h3>
             <p class="mt-1 text-sm text-gray-500">Verificamos la disponibilidad en tu dirección.</p>
           </div>
-          <div class="lg:px-6">
+          <div class="min-w-0 lg:px-6">
             <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
               <iconify-icon icon="fluent-emoji-flat:headphone" width="32"></iconify-icon>
             </span>
-            <h3 class="font-display font-bold">Soporte personalizado</h3>
+            <h3 class="font-display font-bold text-[15px] leading-tight sm:text-base">Soporte personalizado</h3>
             <p class="mt-1 text-sm text-gray-500">Un asesor te acompaña durante todo el proceso.</p>
           </div>
         </div>
@@ -243,7 +250,7 @@
           <!-- Internet -->
           <article id="internet" class="relative overflow-hidden rounded-2xl bg-white p-7 shadow-card">
             <h3 class="font-display text-xl font-bold">Internet Residencial</h3>
-            <p class="mt-2 text-sm text-gray-500 max-w-[60%]">Conexión rápida y estable para todas tus actividades.</p>
+            <p class="mt-2 text-sm text-gray-500 sm:max-w-[60%]">Conexión rápida y estable para todas tus actividades.</p>
             <ul class="mt-5 space-y-2.5 text-sm font-medium">
               <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Fibra óptica</li>
               <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Altas velocidades</li>
@@ -254,13 +261,13 @@
             <a href="#planes" class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark transition">
               Ver planes <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
-            <img src="imagenes/router.png" alt="Router WiFi" class="pointer-events-none absolute -right-2 bottom-2 w-32 sm:w-40 opacity-95">
+            <img src="imagenes/router.png" alt="Router WiFi" class="pointer-events-none mx-auto mt-6 block w-36 opacity-95 sm:absolute sm:-right-2 sm:bottom-2 sm:mt-0 sm:w-40">
           </article>
 
           <!-- TV -->
           <article id="tv" class="relative overflow-hidden rounded-2xl bg-white p-7 shadow-card">
             <h3 class="font-display text-xl font-bold">TV Residencial</h3>
-            <p class="mt-2 text-sm text-gray-500 max-w-[60%]">Entretenimiento para toda la familia.</p>
+            <p class="mt-2 text-sm text-gray-500 sm:max-w-[60%]">Entretenimiento para toda la familia.</p>
             <ul class="mt-5 space-y-2.5 text-sm font-medium">
               <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Canales en vivo</li>
               <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Deportes</li>
@@ -271,7 +278,7 @@
             <a href="#planes" class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark transition">
               Conocer paquetes <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
-            <img src="imagenes/tv.png" alt="TV con apps" class="pointer-events-none absolute -right-3 bottom-2 w-36 sm:w-44 opacity-95">
+            <img src="imagenes/tv.png" alt="TV con apps" class="pointer-events-none mx-auto mt-6 block w-44 opacity-95 sm:absolute sm:-right-3 sm:bottom-2 sm:mt-0 sm:w-44">
           </article>
         </div>
       </div>
@@ -358,38 +365,10 @@
       </div>
     </section>
 
-    <!-- ============ WHY CHOOSE ============ -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-      <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
-        <!-- Heading -->
-        <div class="lg:col-span-3">
-          <p class="eyebrow text-xs font-bold uppercase text-brand mb-3">¿Por qué elegir</p>
-          <h2 class="font-display text-3xl font-extrabold">CONNECTING?</h2>
-          <p class="mt-4 text-gray-500">Te ofrecemos más que conexión, te brindamos tranquilidad.</p>
-        </div>
-
-        <!-- Comparison table -->
-        <div class="lg:col-span-9">
-          <div class="overflow-hidden rounded-2xl bg-white shadow-card">
-            <div class="grid grid-cols-[1fr_auto_auto] items-center">
-              <!-- header -->
-              <div class="px-5 py-4"></div>
-              <div class="bg-brand px-6 py-4 text-center text-sm font-bold text-white">Connecting</div>
-              <div class="px-6 py-4 text-center text-sm font-bold text-gray-400">Otros</div>
-            </div>
-            <div id="compareRows"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ AUTHORIZED DEALER BANNER ============ -->
     <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
       <div class="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-6 sm:p-8 shadow-card">
-        <span class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-soft">
-          <i data-lucide="sparkles" class="h-4 w-4"></i> Dealer Autorizado
-        </span>
-        <div class="mt-5 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+        <div class="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
           <span class="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-white ring-1 ring-gray-100 shadow-soft">
             <iconify-icon icon="fluent-emoji-flat:trophy" width="38"></iconify-icon>
           </span>
@@ -571,7 +550,7 @@
     </div>
 
     <div class="mt-10 border-t border-black/5 pt-6 flex flex-col items-center gap-3 text-sm text-gray-400 sm:flex-row sm:justify-between">
-      <p>© 2024 Connecting. Todos los derechos reservados.</p>
+      <p>© 2026 Connecting. Todos los derechos reservados.</p>
       <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
         <a href="privacidad.html" class="hover:text-brand">Política de privacidad</a>
         <a href="terminos.html" class="hover:text-brand">Términos y condiciones</a>
@@ -597,23 +576,6 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-    // Comparison rows
-    const features = ['Atención personalizada','Verificación de cobertura','Asesor dedicado','Ayuda durante la instalación','Seguimiento postventa'];
-    document.getElementById('compareRows').innerHTML = features.map((f,i) => `
-      <div class="grid grid-cols-[1fr_auto_auto] items-center border-t border-gray-100 ${i % 2 ? '' : 'bg-brand-50/40'}">
-        <div class="px-5 py-3.5 text-sm font-semibold">${f}</div>
-        <div class="bg-brand-50/60 px-6 py-3.5 grid place-items-center">
-          <span class="grid h-6 w-6 place-items-center rounded-full bg-brand text-white">
-            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          </span>
-        </div>
-        <div class="px-6 py-3.5 grid place-items-center">
-          <span class="grid h-6 w-6 place-items-center rounded-full bg-gray-200 text-gray-400">
-            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-          </span>
-        </div>
-      </div>`).join('');
 
     // FAQ
     const faqs = [
