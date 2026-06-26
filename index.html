@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting — Internet y TV Residencial de alta velocidad</title>
+  <meta name="description" content="Internet residencial de alta velocidad para tu hogar. Verificamos la mejor cobertura en tu zona y te ayudamos a contratar el plan ideal." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons (UI details) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Iconify (colorful illustrated icons) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#F15A24',
+              dark:    '#D94A18',
+              light:   '#FF7A45',
+              50:  '#FFF4EF',
+              100: '#FFE6DB',
+              200: '#FFD0BD',
+            },
+            ink:   '#1A1A1A',
+            paper: '#F4F4F3',
+          },
+          fontFamily: {
+            sans:    ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            card: '0 10px 30px -12px rgba(0,0,0,0.12)',
+            soft: '0 4px 20px -8px rgba(0,0,0,0.10)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    .eyebrow { letter-spacing: .12em; }
+
+    /* Accordion */
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-item[open] .faq-body { max-height: 240px; }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform .3s ease; }
+    summary::-webkit-details-marker { display: none; }
+
+    /* Hide scrollbar for testimonials on mobile */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Floating "Llama Ya" button */
+    @keyframes ctaFloat {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(-5px); }
+    }
+    .float-cta { left: 50%; animation: ctaFloat 2.2s ease-in-out infinite; }
+    .float-cta::before {
+      content: ""; position: absolute; inset: 0; border-radius: 9999px;
+      box-shadow: 0 0 0 0 rgba(241,90,36,.5); animation: ctaRing 2.2s ease-out infinite;
+    }
+    @keyframes ctaRing {
+      0%   { box-shadow: 0 0 0 0 rgba(241,90,36,.45); }
+      70%  { box-shadow: 0 0 0 16px rgba(241,90,36,0); }
+      100% { box-shadow: 0 0 0 0 rgba(241,90,36,0); }
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink antialiased pb-24">
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-black/5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 lg:h-20 items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center">
+          <img src="imagenes/logo.png" alt="Connecting" class="h-9 lg:h-11 w-auto" />
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-600">
+          <a href="#inicio"      class="text-brand">Inicio</a>
+          <a href="#internet"    class="hover:text-ink transition">Internet Residencial</a>
+          <a href="#tv"          class="hover:text-ink transition">TV Residencial</a>
+          <a href="#planes"      class="hover:text-ink transition">Planes</a>
+          <a href="#como-funciona" class="hover:text-ink transition">¿Cómo funciona?</a>
+          <a href="#contacto"    class="hover:text-ink transition">Contacto</a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <a href="tel:8882951378" class="hidden lg:inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-dark transition">
+          Llamar ahora <i data-lucide="phone" class="h-4 w-4"></i>
+        </a>
+
+        <!-- Mobile actions -->
+        <div class="flex items-center gap-3 lg:hidden">
+          <a href="tel:8882951378" class="grid h-10 w-10 place-items-center rounded-full border border-brand/30 text-brand">
+            <i data-lucide="phone" class="h-5 w-5"></i>
+          </a>
+          <button id="menuBtn" aria-label="Abrir menú" class="grid h-10 w-10 place-items-center rounded-md text-ink">
+            <i data-lucide="menu" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-black/5 bg-paper">
+      <nav class="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-1 text-sm font-medium">
+        <a href="#inicio"        class="rounded-lg px-3 py-2.5 text-brand bg-brand-50">Inicio</a>
+        <a href="#internet"      class="rounded-lg px-3 py-2.5 hover:bg-black/5">Internet Residencial</a>
+        <a href="#tv"            class="rounded-lg px-3 py-2.5 hover:bg-black/5">TV Residencial</a>
+        <a href="#planes"        class="rounded-lg px-3 py-2.5 hover:bg-black/5">Planes</a>
+        <a href="#como-funciona" class="rounded-lg px-3 py-2.5 hover:bg-black/5">¿Cómo funciona?</a>
+        <a href="#contacto"      class="rounded-lg px-3 py-2.5 hover:bg-black/5">Contacto</a>
+        <a href="tel:8882951378" class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 font-semibold text-white">
+          Llamar ahora <i data-lucide="phone" class="h-4 w-4"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 lg:pt-14 pb-10">
+      <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+
+        <!-- Text -->
+        <div class="lg:col-start-1 lg:row-start-1">
+          <p class="eyebrow text-xs font-bold uppercase text-brand mb-4">Internet y TV Residencial</p>
+          <h1 class="font-display text-4xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight">
+            Internet residencial<br class="hidden sm:block" /> de alta velocidad
+            <span class="text-brand">para tu hogar</span>
+          </h1>
+          <p class="mt-5 max-w-md text-gray-500">
+            Verificamos la mejor cobertura disponible en tu zona y te ayudamos a contratar el plan ideal.
+          </p>
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="tel:8882951378" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-white shadow-soft hover:bg-brand-dark transition">
+              Llamar ahora <i data-lucide="phone" class="h-4 w-4"></i>
+            </a>
+            <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 py-3.5 font-semibold text-ink hover:bg-gray-50 transition">
+              Hablar con un asesor <i data-lucide="headset" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Image + floating card -->
+        <div class="relative lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <div class="overflow-hidden rounded-3xl bg-gradient-to-br from-brand-50 to-gray-100">
+            <img src="imagenes/familia.png" alt="Familia conectada en casa" class="w-full object-cover" />
+          </div>
+          <!-- Features card -->
+          <div class="mx-auto -mt-10 w-[92%] sm:absolute sm:bottom-6 sm:right-6 sm:mt-0 sm:w-64 rounded-2xl bg-white p-4 shadow-card">
+            <ul class="space-y-3 text-sm font-semibold">
+              <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:rocket" width="22"></iconify-icon></span> Instalación rápida</li>
+              <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:clapper-board" width="22"></iconify-icon></span> Planes para streaming</li>
+              <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:laptop" width="22"></iconify-icon></span> Internet para Home Office</li>
+              <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:television" width="22"></iconify-icon></span> TV + Internet</li>
+              <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gray-50"><iconify-icon icon="fluent-emoji-flat:headphone" width="22"></iconify-icon></span> Atención personalizada</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Social proof -->
+        <div class="flex items-center gap-3 lg:col-start-1 lg:row-start-2">
+          <div class="flex -space-x-2">
+            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=1" alt="">
+            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=5" alt="">
+            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=12" alt="">
+            <img class="h-8 w-8 rounded-full ring-2 ring-paper" src="https://i.pravatar.cc/64?img=20" alt="">
+          </div>
+          <span class="text-sm font-medium text-gray-600">20,000+ hogares conectados</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENEFITS BAR ============ -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
+      <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-card">
+        <div class="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-gray-100">
+          <div class="lg:px-6">
+            <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
+              <iconify-icon icon="fluent-emoji-flat:high-voltage" width="32"></iconify-icon>
+            </span>
+            <h3 class="font-display font-bold">Alta velocidad</h3>
+            <p class="mt-1 text-sm text-gray-500">Disfruta de la mejor velocidad para todo lo que importa.</p>
+          </div>
+          <div class="lg:px-6">
+            <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
+              <iconify-icon icon="fluent-emoji-flat:television" width="32"></iconify-icon>
+            </span>
+            <h3 class="font-display font-bold">Entretenimiento</h3>
+            <p class="mt-1 text-sm text-gray-500">TV en vivo y streaming para toda la familia.</p>
+          </div>
+          <div class="lg:px-6">
+            <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
+              <iconify-icon icon="fluent-emoji-flat:house-with-garden" width="32"></iconify-icon>
+            </span>
+            <h3 class="font-display font-bold">Cobertura residencial</h3>
+            <p class="mt-1 text-sm text-gray-500">Verificamos la disponibilidad en tu dirección.</p>
+          </div>
+          <div class="lg:px-6">
+            <span class="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-gray-50 ring-1 ring-gray-100">
+              <iconify-icon icon="fluent-emoji-flat:headphone" width="32"></iconify-icon>
+            </span>
+            <h3 class="font-display font-bold">Soporte personalizado</h3>
+            <p class="mt-1 text-sm text-gray-500">Un asesor te acompaña durante todo el proceso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid gap-8 lg:grid-cols-12 lg:items-start">
+        <!-- Section heading -->
+        <div class="lg:col-span-3 lg:pt-8">
+          <p class="eyebrow text-xs font-bold uppercase text-brand mb-3">Nuestros servicios</p>
+          <h2 class="font-display text-3xl font-extrabold leading-tight">Soluciones<br>para tu hogar</h2>
+          <p class="mt-4 text-gray-500">Internet rápido, estable y entretenimiento para toda la familia.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="lg:col-span-9 grid gap-6 md:grid-cols-2">
+          <!-- Internet -->
+          <article id="internet" class="relative overflow-hidden rounded-2xl bg-white p-7 shadow-card">
+            <h3 class="font-display text-xl font-bold">Internet Residencial</h3>
+            <p class="mt-2 text-sm text-gray-500 max-w-[60%]">Conexión rápida y estable para todas tus actividades.</p>
+            <ul class="mt-5 space-y-2.5 text-sm font-medium">
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Fibra óptica</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Altas velocidades</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> WiFi para toda la casa</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Ideal para videojuegos</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Trabajo remoto</li>
+            </ul>
+            <a href="#planes" class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark transition">
+              Ver planes <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+            <img src="imagenes/router.png" alt="Router WiFi" class="pointer-events-none absolute -right-2 bottom-2 w-32 sm:w-40 opacity-95">
+          </article>
+
+          <!-- TV -->
+          <article id="tv" class="relative overflow-hidden rounded-2xl bg-white p-7 shadow-card">
+            <h3 class="font-display text-xl font-bold">TV Residencial</h3>
+            <p class="mt-2 text-sm text-gray-500 max-w-[60%]">Entretenimiento para toda la familia.</p>
+            <ul class="mt-5 space-y-2.5 text-sm font-medium">
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Canales en vivo</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Deportes</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Películas</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Programación familiar</li>
+              <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand"></i> Paquetes combinados</li>
+            </ul>
+            <a href="#planes" class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark transition">
+              Conocer paquetes <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+            <img src="imagenes/tv.png" alt="TV con apps" class="pointer-events-none absolute -right-3 bottom-2 w-36 sm:w-44 opacity-95">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section id="como-funciona" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="rounded-2xl bg-white p-7 sm:p-10 shadow-card">
+        <p class="eyebrow text-xs font-bold uppercase text-brand mb-8">¿Cómo funciona?</p>
+
+        <ol class="relative grid gap-8 lg:grid-cols-3 lg:gap-6">
+          <!-- vertical line (mobile) -->
+          <span class="absolute left-7 top-3 bottom-3 w-px bg-brand-100 lg:hidden"></span>
+
+          <li class="relative flex gap-4 lg:flex-col lg:gap-3">
+            <span class="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white ring-1 ring-gray-100 shadow-lg shadow-brand/10">
+              <iconify-icon icon="fluent-emoji-flat:magnifying-glass-tilted-left" width="34"></iconify-icon>
+            </span>
+            <div>
+              <p class="font-display text-lg font-extrabold leading-none text-brand">01</p>
+              <h4 class="mt-1.5 font-semibold">Verificamos cobertura</h4>
+              <p class="mt-1 text-sm text-gray-500">Buscamos las mejores opciones disponibles en tu área.</p>
+            </div>
+          </li>
+
+          <li class="relative flex gap-4 lg:flex-col lg:gap-3">
+            <span class="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white ring-1 ring-gray-100 shadow-lg shadow-brand/10">
+              <iconify-icon icon="fluent-emoji-flat:clipboard" width="34"></iconify-icon>
+            </span>
+            <div>
+              <p class="font-display text-lg font-extrabold leading-none text-brand">02</p>
+              <h4 class="mt-1.5 font-semibold">Te mostramos las opciones</h4>
+              <p class="mt-1 text-sm text-gray-500">Comparamos planes y precios para que elijas el ideal.</p>
+            </div>
+          </li>
+
+          <li class="relative flex gap-4 lg:flex-col lg:gap-3">
+            <span class="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white ring-1 ring-gray-100 shadow-lg shadow-brand/10">
+              <iconify-icon icon="fluent-emoji-flat:spiral-calendar" width="34"></iconify-icon>
+            </span>
+            <div>
+              <p class="font-display text-lg font-extrabold leading-none text-brand">03</p>
+              <h4 class="mt-1.5 font-semibold">Programamos la instalación</h4>
+              <p class="mt-1 text-sm text-gray-500">Coordinamos el día y hora que mejor te convenga.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ STATS BAR ============ -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+      <div class="rounded-2xl bg-ink p-7 sm:p-9 text-white">
+        <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
+          <div class="flex items-center gap-4 lg:px-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10"><iconify-icon icon="fluent-emoji-flat:busts-in-silhouette" width="28"></iconify-icon></span>
+            <div>
+              <p class="font-display text-2xl font-extrabold">20,000+</p>
+              <p class="text-sm text-gray-400">Clientes atendidos</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 lg:px-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10"><iconify-icon icon="fluent-emoji-flat:trophy" width="28"></iconify-icon></span>
+            <div>
+              <p class="font-display text-2xl font-extrabold">95%</p>
+              <p class="text-sm text-gray-400">Instalaciones exitosas</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 lg:px-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10"><iconify-icon icon="fluent-emoji-flat:headphone" width="28"></iconify-icon></span>
+            <div>
+              <p class="font-display text-2xl font-extrabold">24/7</p>
+              <p class="text-sm text-gray-400">Asistencia personalizada</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 lg:px-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10"><iconify-icon icon="fluent-emoji-flat:shield" width="28"></iconify-icon></span>
+            <div>
+              <p class="font-display text-2xl font-extrabold">100%</p>
+              <p class="text-sm text-gray-400">Enfocados en hogares</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE ============ -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+        <!-- Heading -->
+        <div class="lg:col-span-3">
+          <p class="eyebrow text-xs font-bold uppercase text-brand mb-3">¿Por qué elegir</p>
+          <h2 class="font-display text-3xl font-extrabold">CONNECTING?</h2>
+          <p class="mt-4 text-gray-500">Te ofrecemos más que conexión, te brindamos tranquilidad.</p>
+        </div>
+
+        <!-- Comparison table -->
+        <div class="lg:col-span-9">
+          <div class="overflow-hidden rounded-2xl bg-white shadow-card">
+            <div class="grid grid-cols-[1fr_auto_auto] items-center">
+              <!-- header -->
+              <div class="px-5 py-4"></div>
+              <div class="bg-brand px-6 py-4 text-center text-sm font-bold text-white">Connecting</div>
+              <div class="px-6 py-4 text-center text-sm font-bold text-gray-400">Otros</div>
+            </div>
+            <div id="compareRows"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AUTHORIZED DEALER BANNER ============ -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+      <div class="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-6 sm:p-8 shadow-card">
+        <span class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white shadow-soft">
+          <i data-lucide="sparkles" class="h-4 w-4"></i> Dealer Autorizado
+        </span>
+        <div class="mt-5 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+          <span class="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-white ring-1 ring-gray-100 shadow-soft">
+            <iconify-icon icon="fluent-emoji-flat:trophy" width="38"></iconify-icon>
+          </span>
+          <div>
+            <h3 class="font-display text-xl sm:text-2xl font-extrabold">Revendedor Autorizado Certificado · Mercado Hispano EE.UU.</h3>
+            <p class="mt-2 text-gray-500 max-w-3xl">
+              Como dealer autorizado, podemos ofrecerte las mismas tarifas y beneficios que ir directamente a la compañía
+              — pero con la ventaja de atención personalizada en español, sin esperas y sin confusiones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section id="planes" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="mb-10 text-center">
+        <p class="eyebrow text-xs font-bold uppercase text-brand mb-3">Nuestros planes</p>
+        <h2 class="font-display text-3xl font-extrabold">Elige el plan ideal para tu hogar</h2>
+        <p class="mt-3 text-gray-500">Precios claros, sin sorpresas. Atención en español de principio a fin.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-3 lg:items-center">
+
+        <!-- Plan 1 -->
+        <article class="relative rounded-2xl bg-white p-7 shadow-card">
+          <span class="absolute right-6 top-6 rounded-full bg-brand-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand">Más popular</span>
+          <h3 class="font-display text-xl font-extrabold">Internet 300</h3>
+          <div class="mt-4 flex items-end gap-2">
+            <span class="font-display text-5xl font-extrabold text-brand">300</span>
+            <span class="mb-1.5 text-sm font-semibold text-gray-500">Mbps</span>
+          </div>
+          <p class="mt-3 flex items-end gap-1">
+            <span class="font-display text-3xl font-extrabold">$45</span>
+            <span class="mb-1 text-sm text-gray-500">/ mes</span>
+          </p>
+          <p class="mt-2 text-xs text-gray-400">*precio por 12 meses. Sin contratos a largo plazo.</p>
+          <ul class="mt-6 space-y-2.5 text-sm font-medium">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> WiFi para toda la casa incluido</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Sin límite de datos</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Sin contrato de permanencia</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Instalación estándar gratis</li>
+          </ul>
+          <a href="tel:8882951378" class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand px-5 py-3 font-semibold text-brand hover:bg-brand hover:text-white transition">
+            <i data-lucide="phone" class="h-4 w-4"></i> Contratar Ahora
+          </a>
+        </article>
+
+        <!-- Plan 2 (highlighted) -->
+        <article class="relative rounded-2xl bg-ink p-7 text-white shadow-card ring-2 ring-brand lg:-mt-6 lg:pb-10 lg:pt-10">
+          <span class="absolute right-6 top-6 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">Recomendado</span>
+          <h3 class="font-display text-xl font-extrabold">Internet + TV Paquete</h3>
+          <div class="mt-4 flex items-end gap-2">
+            <span class="font-display text-5xl font-extrabold text-brand">500</span>
+            <span class="mb-1.5 text-sm font-semibold text-gray-300">Mbps + TV</span>
+          </div>
+          <p class="mt-3 flex items-end gap-1">
+            <span class="font-display text-3xl font-extrabold">$65</span>
+            <span class="mb-1 text-sm text-gray-400">/ mes</span>
+          </p>
+          <p class="mt-2 text-xs text-gray-400">*precio especial para nuevos clientes. Sujeto a disponibilidad.</p>
+          <ul class="mt-6 space-y-2.5 text-sm font-medium">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Internet alta velocidad</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Canales en español incluidos</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Acceso a streaming</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Atención prioritaria</li>
+          </ul>
+          <a href="tel:8882951378" class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 font-semibold text-white hover:bg-brand-dark transition">
+            <i data-lucide="phone" class="h-4 w-4"></i> Preguntar Precio
+          </a>
+        </article>
+
+        <!-- Plan 3 -->
+        <article class="relative rounded-2xl bg-white p-7 shadow-card">
+          <h3 class="font-display text-xl font-extrabold">TV + Internet Bundle</h3>
+          <div class="mt-4 flex items-end gap-2">
+            <span class="font-display text-5xl font-extrabold text-brand">1G</span>
+            <span class="mb-1.5 text-sm font-semibold text-gray-500">Gbps + 200+ Ch</span>
+          </div>
+          <p class="mt-3 flex items-end gap-1">
+            <span class="font-display text-3xl font-extrabold">$95</span>
+            <span class="mb-1 text-sm text-gray-500">/ mes</span>
+          </p>
+          <p class="mt-2 text-xs text-gray-400">*precio estimado. Varía según zona y promociones activas.</p>
+          <ul class="mt-6 space-y-2.5 text-sm font-medium">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> +200 canales incluyendo en español</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Fibra óptica hasta tu hogar</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> DVR incluido</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-brand"></i> Soporte técnico 24/7</li>
+          </ul>
+          <a href="tel:8882951378" class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand px-5 py-3 font-semibold text-brand hover:bg-brand hover:text-white transition">
+            <i data-lucide="phone" class="h-4 w-4"></i> Ver Disponibilidad
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10">
+      <p class="eyebrow text-xs font-bold uppercase text-brand mb-6">Preguntas frecuentes</p>
+      <div id="faqList" class="space-y-3"></div>
+    </section>
+
+    <!-- ============ DOUBTS / AGENT ============ -->
+    <section id="contacto" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid items-center gap-8 lg:grid-cols-2">
+        <div class="overflow-hidden rounded-2xl shadow-card">
+          <img src="imagenes/asesor.png" alt="Asesora de atención al cliente" class="h-64 w-full object-cover object-top lg:h-80" />
+        </div>
+        <div class="text-center lg:text-left">
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold">¿Aún tienes dudas?<br>Estamos para ayudarte.</h2>
+          <p class="mt-3 text-gray-500">Habla con un asesor ahora mismo.</p>
+          <a href="tel:8882951378" class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-white shadow-soft hover:bg-brand-dark transition">
+            Hablar con un asesor <i data-lucide="phone" class="h-5 w-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="rounded-3xl bg-brand p-8 sm:p-10 text-white">
+        <div class="grid items-center gap-6 text-center lg:grid-cols-12 lg:text-left">
+          <div class="hidden lg:col-span-2 lg:flex justify-center">
+            <i data-lucide="house-wifi" class="h-20 w-20 opacity-90"></i>
+          </div>
+          <div class="lg:col-span-6">
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold">¿Listo para mejorar tu internet en casa?</h2>
+            <p class="mt-2 text-white/90">Verifica tu cobertura y encuentra el plan perfecto para ti.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-col items-center gap-3 lg:items-end">
+            <a href="tel:8882951378" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-brand hover:bg-gray-100 transition">
+              Llamar ahora <i data-lucide="phone" class="h-4 w-4"></i>
+            </a>
+            <p class="text-sm text-white/80">Sin compromiso • Respuesta inmediata</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <!-- Brand -->
+      <div class="lg:col-span-4">
+        <img src="imagenes/logo.png" alt="Connecting" class="h-11 w-auto" />
+        <p class="mt-3 text-sm text-gray-500">Tu conexión, nuestra prioridad</p>
+      </div>
+
+      <!-- Servicios -->
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold uppercase tracking-wide text-gray-400 mb-4">Servicios</h4>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li><a href="#internet" class="hover:text-brand">Internet Residencial</a></li>
+          <li><a href="#tv" class="hover:text-brand">TV Residencial</a></li>
+        </ul>
+      </div>
+
+      <!-- Navegación -->
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold uppercase tracking-wide text-gray-400 mb-4">Navegación</h4>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li><a href="#inicio" class="hover:text-brand">Inicio</a></li>
+          <li><a href="#planes" class="hover:text-brand">Planes</a></li>
+          <li><a href="#como-funciona" class="hover:text-brand">¿Cómo funciona?</a></li>
+          <li><a href="#contacto" class="hover:text-brand">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="lg:col-span-4">
+        <h4 class="text-sm font-bold uppercase tracking-wide text-gray-400 mb-4">Contacto</h4>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand"><i data-lucide="phone" class="h-4 w-4"></i></span> <a href="tel:8882951378" class="hover:text-brand">(888) 295-1378</a></li>
+          <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand"><i data-lucide="clock" class="h-4 w-4"></i></span> Lunes a Domingo 8am - 9pm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 border-t border-black/5 pt-6 flex flex-col items-center gap-3 text-sm text-gray-400 sm:flex-row sm:justify-between">
+      <p>© 2024 Connecting. Todos los derechos reservados.</p>
+      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+        <a href="privacidad.html" class="hover:text-brand">Política de privacidad</a>
+        <a href="terminos.html" class="hover:text-brand">Términos y condiciones</a>
+      </nav>
+    </div>
+    <p class="mt-4 text-center text-xs text-gray-400">
+      Connecting es un revendedor autorizado independiente. Los precios mostrados son estimados, pueden variar según la
+      zona, disponibilidad y promociones vigentes, y no constituyen una oferta vinculante. Las marcas mencionadas
+      pertenecen a sus respectivos propietarios.
+    </p>
+  </footer>
+
+  <!-- ============ FLOATING CALL BUTTON ============ -->
+  <a href="tel:8882951378"
+     class="float-cta fixed bottom-6 z-50 inline-flex items-center gap-2.5 rounded-full bg-brand px-8 py-4 text-base font-extrabold uppercase tracking-wide text-white shadow-2xl ring-4 ring-brand/20 hover:bg-brand-dark transition">
+    <i data-lucide="phone-call" class="h-5 w-5"></i> Llama Ya
+  </a>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Comparison rows
+    const features = ['Atención personalizada','Verificación de cobertura','Asesor dedicado','Ayuda durante la instalación','Seguimiento postventa'];
+    document.getElementById('compareRows').innerHTML = features.map((f,i) => `
+      <div class="grid grid-cols-[1fr_auto_auto] items-center border-t border-gray-100 ${i % 2 ? '' : 'bg-brand-50/40'}">
+        <div class="px-5 py-3.5 text-sm font-semibold">${f}</div>
+        <div class="bg-brand-50/60 px-6 py-3.5 grid place-items-center">
+          <span class="grid h-6 w-6 place-items-center rounded-full bg-brand text-white">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+        </div>
+        <div class="px-6 py-3.5 grid place-items-center">
+          <span class="grid h-6 w-6 place-items-center rounded-full bg-gray-200 text-gray-400">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </span>
+        </div>
+      </div>`).join('');
+
+    // FAQ
+    const faqs = [
+      ['¿Qué velocidad de internet necesito?','Depende de tu uso: para navegar y redes sociales 50 Mbps bastan; para streaming en varios dispositivos y home office recomendamos 200 Mbps o más. Un asesor te ayuda a elegir.'],
+      ['¿Cuánto tarda la instalación?','En la mayoría de los casos la instalación se realiza dentro de las 24 a 72 horas posteriores a la confirmación de tu cobertura.'],
+      ['¿El módem y el equipo están incluidos?','Sí, nuestros planes incluyen el equipo necesario (módem/router WiFi) y, en los paquetes de TV, el decodificador. Un asesor te detalla qué incluye cada plan.'],
+      ['¿Hay contratos o anualidades?','Contamos con planes con y sin permanencia. Te mostramos todas las opciones para que elijas la que mejor se adapte a ti.'],
+      ['¿Qué formas de pago aceptan?','Aceptamos pago únicamente con tarjeta de crédito o débito.'],
+    ];
+    document.getElementById('faqList').innerHTML = faqs.map(([q,a]) => `
+      <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
+          ${q}
+          <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 text-brand shrink-0"></i>
+        </summary>
+        <div class="faq-body"><p class="pb-4 text-sm text-gray-500">${a}</p></div>
+      </details>`).join('');
+
+    // Render icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
