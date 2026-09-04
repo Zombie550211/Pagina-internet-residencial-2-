@@ -40,56 +40,42 @@
   <meta property="og:description" content="Verificamos la mejor cobertura disponible en tu zona y te ayudamos a contratar el plan ideal para tu hogar." />
   <meta property="og:image" content="https://www.internetparatuhogar.com/imagenes/familia.webp" />
   <meta property="og:url" content="https://www.internetparatuhogar.com/" />
-  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale" content="es_US" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="styles.css" />
   <!-- Lucide Icons (UI details) -->
   <!-- Iconify (colorful illustrated icons) -->
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Tipografias autohospedadas -->
+  <link rel="preload" href="fuentes/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/jakarta-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fuentes.css" />
 
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+  <link rel="stylesheet" href="site.css" />
 
-    .eyebrow { letter-spacing: .12em; }
-
-    /* Accordion */
-    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
-    .faq-item[open] .faq-body { max-height: 240px; }
-    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
-    .faq-chevron { transition: transform .3s ease; }
-    summary::-webkit-details-marker { display: none; }
-
-    /* Hide scrollbar for testimonials on mobile */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* Floating "Llama Ya" button */
-    @keyframes ctaFloat {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50%      { transform: translateX(-50%) translateY(-5px); }
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Connecting",
+    "url": "https://www.internetparatuhogar.com/",
+    "logo": "https://www.internetparatuhogar.com/imagenes/logo.webp",
+    "description": "Revendedor autorizado independiente que compara opciones de internet, television y telefonia disponibles en tu zona y facilita el proceso de contratacion en espanol.",
+    "areaServed": "US",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-888-295-1378",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish", "English"]
     }
-    .float-cta { left: 50%; animation: ctaFloat 2.2s ease-in-out infinite; }
-    .float-cta::before {
-      content: ""; position: absolute; inset: 0; border-radius: 9999px;
-      box-shadow: 0 0 0 0 rgba(241,90,36,.5); animation: ctaRing 2.2s ease-out infinite;
-    }
-    @keyframes ctaRing {
-      0%   { box-shadow: 0 0 0 0 rgba(241,90,36,.45); }
-      70%  { box-shadow: 0 0 0 16px rgba(241,90,36,0); }
-      100% { box-shadow: 0 0 0 0 rgba(241,90,36,0); }
-    }
-  </style>
+  }
+  </script>
 </head>
 
-<body class="bg-paper text-ink antialiased pb-24">
+<body class="bg-paper text-ink antialiased">
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="l-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" /></symbol><symbol id="l-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="l-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></symbol><symbol id="l-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" />
   <path d="m16 9-5.5 5.5L8 12" /></symbol><symbol id="l-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" />
@@ -97,7 +83,8 @@
   <path d="M21 16v2a4 4 0 0 1-4 4h-5" /></symbol><symbol id="l-house-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 13.866a4 4 0 0 1 5 .01" />
   <path d="M12 17h.01" />
   <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-  <path d="M7 10.754a8 8 0 0 1 10 0" /></symbol><symbol id="l-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16" />
+  <path d="M7 10.754a8 8 0 0 1 10 0" /></symbol><symbol id="l-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" />
+  <path d="m6 6 12 12" /></symbol><symbol id="l-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16" />
   <path d="M4 12h16" />
   <path d="M4 19h16" /></symbol><symbol id="l-phone-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2a9 9 0 0 1 9 9" />
   <path d="M13 6a5 5 0 0 1 5 5" />
@@ -126,6 +113,7 @@
           <a href="#planes"      class="hover:text-ink transition">Planes</a>
           <a href="#como-funciona" class="hover:text-ink transition">¿Cómo funciona?</a>
           <a href="#contacto"    class="hover:text-ink transition">Contacto</a>
+          <a href="ayuda.html"   class="hover:text-ink transition">Ayuda</a>
         </nav>
 
         <!-- Desktop CTA -->
@@ -138,8 +126,8 @@
           <a href="tel:8882951378" class="grid h-10 w-10 place-items-center rounded-full border border-brand/30 text-brand">
             <svg class="h-5 w-5" aria-hidden="true"><use href="#l-phone"/></svg>
           </a>
-          <button id="menuBtn" aria-label="Abrir menú" class="grid h-10 w-10 place-items-center rounded-md text-ink">
-            <svg class="h-6 w-6" aria-hidden="true"><use href="#l-menu"/></svg>
+          <button id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu" class="grid h-10 w-10 place-items-center rounded-md text-ink">
+            <svg class="h-6 w-6" aria-hidden="true"><use id="menuIcon" href="#l-menu"/></svg>
           </button>
         </div>
       </div>
@@ -154,6 +142,7 @@
         <a href="#planes"        class="rounded-lg px-3 py-2.5 hover:bg-black/5">Planes</a>
         <a href="#como-funciona" class="rounded-lg px-3 py-2.5 hover:bg-black/5">¿Cómo funciona?</a>
         <a href="#contacto"      class="rounded-lg px-3 py-2.5 hover:bg-black/5">Contacto</a>
+        <a href="ayuda.html"     class="rounded-lg px-3 py-2.5 hover:bg-black/5">Centro de ayuda</a>
         <a href="tel:8882951378" class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 font-semibold text-white">
           Llamar ahora <svg class="h-4 w-4" aria-hidden="true"><use href="#l-phone"/></svg>
         </a>
@@ -465,12 +454,52 @@
           </a>
         </article>
       </div>
+      <p class="mt-8 text-center text-xs text-gray-400">
+        Los precios y velocidades mostrados son estimados y no constituyen una oferta vinculante; se confirman según la
+        cobertura disponible en tu dirección. Las marcas mencionadas pertenecen a sus respectivos propietarios.
+      </p>
     </section>
 
     <!-- ============ FAQ ============ -->
     <section class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10">
       <p class="eyebrow text-xs font-bold uppercase text-brand mb-6">Preguntas frecuentes</p>
-      <div id="faqList" class="space-y-3"></div>
+      <div class="space-y-3">
+        <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
+            ¿Qué velocidad de internet necesito?
+            <svg class="faq-chevron h-5 w-5 text-brand shrink-0" aria-hidden="true"><use href="#l-chevron-down"/></svg>
+          </summary>
+          <div class="faq-body"><p class="pb-4 text-sm text-gray-500">Depende de tu uso: para navegar y redes sociales 50 Mbps bastan; para streaming en varios dispositivos y home office recomendamos 200 Mbps o más. Un asesor te ayuda a elegir.</p></div>
+        </details>
+        <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
+            ¿Cuánto tarda la instalación?
+            <svg class="faq-chevron h-5 w-5 text-brand shrink-0" aria-hidden="true"><use href="#l-chevron-down"/></svg>
+          </summary>
+          <div class="faq-body"><p class="pb-4 text-sm text-gray-500">En la mayoría de los casos la instalación se realiza dentro de las 24 a 72 horas posteriores a la confirmación de tu cobertura.</p></div>
+        </details>
+        <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
+            ¿El módem y el equipo están incluidos?
+            <svg class="faq-chevron h-5 w-5 text-brand shrink-0" aria-hidden="true"><use href="#l-chevron-down"/></svg>
+          </summary>
+          <div class="faq-body"><p class="pb-4 text-sm text-gray-500">Sí, nuestros planes incluyen el equipo necesario (módem/router WiFi) y, en los paquetes de TV, el decodificador. Un asesor te detalla qué incluye cada plan.</p></div>
+        </details>
+        <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
+            ¿Hay contratos o anualidades?
+            <svg class="faq-chevron h-5 w-5 text-brand shrink-0" aria-hidden="true"><use href="#l-chevron-down"/></svg>
+          </summary>
+          <div class="faq-body"><p class="pb-4 text-sm text-gray-500">Contamos con planes con y sin permanencia. Te mostramos todas las opciones para que elijas la que mejor se adapte a ti.</p></div>
+        </details>
+        <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
+            ¿Qué formas de pago aceptan?
+            <svg class="faq-chevron h-5 w-5 text-brand shrink-0" aria-hidden="true"><use href="#l-chevron-down"/></svg>
+          </summary>
+          <div class="faq-body"><p class="pb-4 text-sm text-gray-500">Aceptamos pago únicamente con tarjeta de crédito o débito.</p></div>
+        </details>
+      </div>
     </section>
 
     <!-- ============ DOUBTS / AGENT ============ -->
@@ -512,62 +541,66 @@
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-10 lg:grid-cols-12">
-      <!-- Brand -->
-      <div class="lg:col-span-4">
-        <img src="imagenes/logo.webp" alt="Connecting" width="500" height="282" loading="lazy" class="h-11 w-auto" />
-        <p class="mt-3 text-sm text-gray-500">Tu conexión, nuestra prioridad</p>
+  <footer class="site-footer">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="footer-grid">
+        <!-- Marca -->
+        <div class="footer-brand">
+          <img src="imagenes/logo.webp" alt="Connecting" width="500" height="282" loading="lazy" class="footer-logo" />
+          <p class="footer-about">
+            Connecting es un revendedor autorizado independiente que compara opciones de internet, televisión y
+            telefonía disponibles en tu zona y facilita el proceso de contratación en español. No somos una compañía
+            proveedora de telecomunicaciones. La disponibilidad, instalación, facturación y soporte corresponden
+            directamente al proveedor seleccionado.
+          </p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="footer-nav">
+          <h4 class="footer-heading">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#internet">Internet Residencial</a></li>
+            <li><a href="#tv">TV Residencial</a></li>
+            <li><a href="#planes">Planes</a></li>
+            <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Enlaces legales -->
+        <div class="footer-legal">
+          <h4 class="footer-heading">Enlaces legales</h4>
+          <ul class="footer-links">
+            <li><a href="ayuda.html">Centro de ayuda</a></li>
+            <li><a href="privacidad.html">Política de privacidad</a></li>
+            <li><a href="terminos.html">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="footer-contact">
+          <h4 class="footer-heading">Datos de contacto</h4>
+          <dl>
+            <dt>Teléfono:</dt>
+            <dd><a href="tel:8882951378">(888) 295-1378</a></dd>
+            <dt>Horario de atención:</dt>
+            <dd>Lunes a Domingo, 8am - 9pm</dd>
+            <dt>Cobertura:</dt>
+            <dd>Consulta la disponibilidad en tu zona</dd>
+          </dl>
+        </div>
       </div>
 
-      <!-- Servicios -->
-      <div class="lg:col-span-2">
-        <h4 class="text-sm font-bold uppercase tracking-wide text-gray-400 mb-4">Servicios</h4>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li><a href="#internet" class="hover:text-brand">Internet Residencial</a></li>
-          <li><a href="#tv" class="hover:text-brand">TV Residencial</a></li>
-        </ul>
-      </div>
-
-      <!-- Navegación -->
-      <div class="lg:col-span-2">
-        <h4 class="text-sm font-bold uppercase tracking-wide text-gray-400 mb-4">Navegación</h4>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li><a href="#inicio" class="hover:text-brand">Inicio</a></li>
-          <li><a href="#planes" class="hover:text-brand">Planes</a></li>
-          <li><a href="#como-funciona" class="hover:text-brand">¿Cómo funciona?</a></li>
-          <li><a href="#contacto" class="hover:text-brand">Contacto</a></li>
-        </ul>
-      </div>
-
-      <!-- Contacto -->
-      <div class="lg:col-span-4">
-        <h4 class="text-sm font-bold uppercase tracking-wide text-gray-400 mb-4">Contacto</h4>
-        <ul class="space-y-3 text-sm text-gray-600">
-          <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand"><svg class="h-4 w-4" aria-hidden="true"><use href="#l-phone"/></svg></span> <a href="tel:8882951378" class="hover:text-brand">(888) 295-1378</a></li>
-          <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand"><svg class="h-4 w-4" aria-hidden="true"><use href="#l-clock"/></svg></span> Lunes a Domingo 8am - 9pm</li>
-        </ul>
-      </div>
+      <p class="footer-bottom">© <span data-year>2026</span> Connecting. Todos los derechos reservados.</p>
     </div>
-
-    <div class="mt-10 border-t border-black/5 pt-6 flex flex-col items-center gap-3 text-sm text-gray-400 sm:flex-row sm:justify-between">
-      <p>© 2026 Connecting. Todos los derechos reservados.</p>
-      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-        <a href="privacidad.html" class="hover:text-brand">Política de privacidad</a>
-        <a href="terminos.html" class="hover:text-brand">Términos y condiciones</a>
-      </nav>
-    </div>
-    <p class="mt-4 text-center text-xs text-gray-400">
-      Connecting es un revendedor autorizado independiente. Los precios mostrados son estimados, pueden variar según la
-      zona, disponibilidad y promociones vigentes, y no constituyen una oferta vinculante. Las marcas mencionadas
-      pertenecen a sus respectivos propietarios.
-    </p>
   </footer>
 
   <!-- ============ FLOATING CALL BUTTON ============ -->
   <a href="tel:8882951378"
-     class="float-cta fixed bottom-6 z-50 inline-flex items-center gap-2.5 rounded-full bg-brand px-8 py-4 text-base font-extrabold uppercase tracking-wide text-white shadow-2xl ring-4 ring-brand/20 hover:bg-brand-dark transition">
-    <svg class="h-5 w-5" aria-hidden="true"><use href="#l-phone-call"/></svg> Llama Ya
+     class="float-cta fixed z-50 bg-brand text-base font-extrabold uppercase tracking-wide text-white hover:bg-brand-dark transition">
+    <svg class="h-5 w-5" aria-hidden="true"><use href="#l-phone-call"/></svg>
+    <span>Llama Ya <span class="float-cta__num">· (888) 295-1378</span></span>
   </a>
 
   <!-- ============ SCRIPTS ============ -->
@@ -575,27 +608,21 @@
     // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    const menuIcon = document.getElementById('menuIcon');
 
-    // FAQ
-    const faqs = [
-      ['¿Qué velocidad de internet necesito?','Depende de tu uso: para navegar y redes sociales 50 Mbps bastan; para streaming en varios dispositivos y home office recomendamos 200 Mbps o más. Un asesor te ayuda a elegir.'],
-      ['¿Cuánto tarda la instalación?','En la mayoría de los casos la instalación se realiza dentro de las 24 a 72 horas posteriores a la confirmación de tu cobertura.'],
-      ['¿El módem y el equipo están incluidos?','Sí, nuestros planes incluyen el equipo necesario (módem/router WiFi) y, en los paquetes de TV, el decodificador. Un asesor te detalla qué incluye cada plan.'],
-      ['¿Hay contratos o anualidades?','Contamos con planes con y sin permanencia. Te mostramos todas las opciones para que elijas la que mejor se adapte a ti.'],
-      ['¿Qué formas de pago aceptan?','Aceptamos pago únicamente con tarjeta de crédito o débito.'],
-    ];
-    document.getElementById('faqList').innerHTML = faqs.map(([q,a]) => `
-      <details class="faq-item group rounded-xl bg-white px-5 shadow-soft">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">
-          ${q}
-          <svg class="faq-chevron h-5 w-5 text-brand shrink-0" aria-hidden="true"><use href="#l-chevron-down"/></svg>
-        </summary>
-        <div class="faq-body"><p class="pb-4 text-sm text-gray-500">${a}</p></div>
-      </details>`).join('');
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      menuIcon.setAttribute('href', open ? '#l-x' : '#l-menu');
+    };
 
-    // Render icons
+    menuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    // Año del copyright
+    document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+
   </script>
 </body>
 </html>

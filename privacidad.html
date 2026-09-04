@@ -32,11 +32,11 @@
   <link rel="apple-touch-icon" href="imagenes/apple-touch-icon.png" />
 
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body{font-family:'Inter',sans-serif}
-    h1,h2{font-family:'Plus Jakarta Sans',sans-serif}
-  </style>
+  <!-- Tipografias autohospedadas -->
+  <link rel="preload" href="fuentes/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/jakarta-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fuentes.css" />
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body class="bg-paper text-ink antialiased">
   <!-- Google Tag Manager (noscript) -->
@@ -55,53 +55,154 @@
 
   <main class="mx-auto max-w-3xl px-4 py-12">
     <h1 class="text-3xl font-extrabold">Política de Privacidad</h1>
-    <p class="mt-2 text-sm text-gray-500">Última actualización: junio de 2026</p>
+    <p class="mt-2 text-sm text-gray-500">Última actualización: septiembre de 2026</p>
+
+    <div class="mt-6 rounded-2xl bg-white p-5 shadow-soft ring-1 ring-black/5">
+      <ul class="space-y-1 text-sm text-gray-600">
+        <li><span class="font-semibold text-ink">Entidad responsable:</span> Connecting</li>
+        <li><span class="font-semibold text-ink">Sitio oficial:</span> <a href="https://www.internetparatuhogar.com/" class="text-brand hover:underline">internetparatuhogar.com</a></li>
+        <li><span class="font-semibold text-ink">Teléfono:</span> <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a></li>
+        <li><span class="font-semibold text-ink">Normativa cumplida:</span> TCPA (llamadas y SMS) y leyes federales aplicables de Estados Unidos.</li>
+      </ul>
+    </div>
 
     <div class="mt-8 space-y-8 text-gray-600 leading-relaxed">
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">1. Quiénes somos</h2>
-        <p>Connecting es un revendedor autorizado independiente de servicios de Internet y TV residencial para el mercado hispano en Estados Unidos. Esta política explica cómo recopilamos, usamos y protegemos tu información personal.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">1. Declaración de privacidad</h2>
+        <p>En Connecting, operadora de internetparatuhogar.com, respetamos su privacidad y nos comprometemos a proteger sus datos personales.</p>
+        <p class="mt-3">Esta Política de Privacidad describe cómo recopilamos, usamos, compartimos y protegemos su información cuando visita nuestro sitio web o solicita nuestros servicios de asesoría.</p>
       </section>
 
       <section>
         <h2 class="text-xl font-bold text-ink mb-2">2. Información que recopilamos</h2>
-        <p>Cuando completas nuestro formulario de cobertura podemos recopilar: nombre, dirección, ciudad, estado, código postal (ZIP) y número de teléfono. También podemos recopilar datos técnicos básicos de navegación (como dirección IP y tipo de dispositivo) mediante cookies y herramientas de medición.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-bold text-ink mb-2">3. Cómo usamos tu información</h2>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Verificar la disponibilidad de cobertura en tu dirección.</li>
-          <li>Que un asesor te contacte por teléfono para presentarte planes y precios.</li>
-          <li>Mejorar nuestro sitio y medir la efectividad de nuestra publicidad.</li>
+        <p>Para procesar las solicitudes de verificación de cobertura y contratación, recopilamos la siguiente información personal proporcionada voluntariamente por el usuario:</p>
+        <ul class="mt-3 list-disc pl-5 space-y-2">
+          <li><span class="font-semibold text-ink">Información de contacto:</span> nombre, apellidos, número de teléfono y correo electrónico.</li>
+          <li><span class="font-semibold text-ink">Información de ubicación:</span> dirección física exacta, incluyendo calle, ciudad, estado y código postal, para determinar la disponibilidad de cobertura en su área.</li>
+          <li><span class="font-semibold text-ink">Información de identificación requerida por el proveedor:</span> tipo y número de documento, como pasaporte o identificación estatal, y fecha de nacimiento para procesar el alta del servicio.</li>
         </ul>
-        <p class="mt-3">No vendemos tu información personal a terceros.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">4. Cookies y publicidad</h2>
-        <p>Usamos cookies y tecnologías similares, incluidas las de Google (Google Ads y Google Analytics), para medir el rendimiento de nuestras campañas y mostrar anuncios relevantes. Puedes gestionar las cookies desde la configuración de tu navegador y ajustar tus preferencias de anuncios de Google en <a href="https://myadcenter.google.com" class="text-brand hover:underline">myadcenter.google.com</a>.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">3. Uso de la información y quién la procesa</h2>
+        <p>La información recopilada por Connecting se utiliza estrictamente para:</p>
+        <ul class="mt-3 list-disc pl-5 space-y-1">
+          <li>Verificar los proveedores de internet, televisión o telefonía disponibles en la dirección indicada.</li>
+          <li>Comparar las opciones de cobertura, planes y precios disponibles.</li>
+          <li>Preparar la solicitud de contratación.</li>
+          <li>Transmitir la solicitud al proveedor de telecomunicaciones seleccionado, quien procesará el alta técnica de la cuenta.</li>
+          <li>Coordinar fechas de instalación.</li>
+          <li>Brindar seguimiento y atención en español.</li>
+        </ul>
+        <p class="mt-3">Una vez transmitida la solicitud, la compañía proveedora seleccionada será responsable de procesar y administrar la cuenta, instalación, facturación y servicio contratado.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">5. Con quién compartimos datos</h2>
-        <p>Podemos compartir tu información con los proveedores de servicio cuya cobertura solicitas verificar, únicamente con el fin de procesar tu consulta, y con proveedores tecnológicos que nos ayudan a operar el sitio. Todos están obligados a proteger tu información.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">4. Protección especial sobre SMS y llamadas (TCPA y A2P 10DLC)</h2>
+        <p><span class="font-semibold text-ink">No compartición de SMS:</span> la información de consentimiento y los números telefónicos recopilados para mensajes de texto (SMS) o llamadas de servicio nunca serán vendidos, alquilados ni compartidos con terceros o afiliados con fines publicitarios o de marketing.</p>
+        <p class="mt-3"><span class="font-semibold text-ink">Uso exclusivo:</span> los datos telefónicos se utilizan únicamente para:</p>
+        <ul class="mt-3 list-disc pl-5 space-y-1">
+          <li>Responder consultas directas.</li>
+          <li>Verificar la disponibilidad de servicios.</li>
+          <li>Dar seguimiento a solicitudes.</li>
+          <li>Enviar confirmaciones relacionadas con la orden.</li>
+          <li>Enviar recordatorios de instalación.</li>
+          <li>Proporcionar actualizaciones sobre el proceso de contratación.</li>
+        </ul>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">6. Tus derechos</h2>
-        <p>Puedes solicitar acceder, corregir o eliminar tus datos personales, así como dejar de recibir comunicaciones, contactándonos por teléfono al <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a>.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">5. Grabación de llamadas</h2>
+        <p>Con la finalidad de garantizar la calidad de la atención, capacitar a nuestro personal y respaldar las solicitudes de contratación ante los proveedores correspondientes, las llamadas telefónicas realizadas o recibidas por nuestros asesores pueden ser grabadas de conformidad con las leyes estatales aplicables.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">7. Contacto</h2>
-        <p>Si tienes preguntas sobre esta política, llámanos al <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a>, de lunes a domingo de 8am a 9pm.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">6. Cookies y tecnologías de seguimiento</h2>
+        <p>Nuestro sitio web internetparatuhogar.com utiliza cookies y herramientas analíticas básicas para:</p>
+        <ul class="mt-3 list-disc pl-5 space-y-1">
+          <li>Mejorar la experiencia de navegación.</li>
+          <li>Conocer cómo los usuarios interactúan con el sitio.</li>
+          <li>Medir el rendimiento publicitario.</li>
+          <li>Analizar llamadas, formularios y conversiones.</li>
+          <li>Detectar errores o actividades inusuales.</li>
+          <li>Mejorar nuestros servicios y campañas publicitarias.</li>
+        </ul>
+        <p class="mt-3">Entre estas herramientas utilizamos servicios de Google (Google Ads y Google Analytics). Puede ajustar sus preferencias de anuncios en <a href="https://myadcenter.google.com" class="text-brand hover:underline">myadcenter.google.com</a>.</p>
+        <p class="mt-3">El usuario puede bloquear o eliminar las cookies desde la configuración de su navegador. Algunas funciones del sitio podrían no operar correctamente si se desactivan las cookies necesarias.</p>
+        <p class="mt-3">Connecting no vende datos de navegación a corredores de datos (data brokers).</p>
+      </section>
+
+      <section class="rounded-2xl bg-brand-50 p-5">
+        <h2 class="text-xl font-bold text-ink mb-2">7. Aviso de independencia</h2>
+        <p>Connecting es un revendedor autorizado independiente. No somos una compañía proveedora de internet, televisión o telefonía.</p>
+        <p class="mt-3">Cuando el cliente selecciona un servicio, la información necesaria para procesar la solicitud puede transmitirse al proveedor correspondiente.</p>
+        <p class="mt-3">La prestación, instalación, activación, facturación y soporte del servicio contratado corresponden directamente a la compañía proveedora seleccionada.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-ink mb-2">8. Contacto</h2>
+        <p>Para realizar preguntas relacionadas con esta Política de Privacidad, puede comunicarse con:</p>
+        <ul class="mt-3 space-y-1">
+          <li><span class="font-semibold text-ink">Empresa:</span> Connecting</li>
+          <li><span class="font-semibold text-ink">Sitio web:</span> <a href="https://www.internetparatuhogar.com/" class="text-brand hover:underline">internetparatuhogar.com</a></li>
+          <li><span class="font-semibold text-ink">Teléfono:</span> <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a></li>
+        </ul>
       </section>
     </div>
   </main>
 
-  <footer class="border-t border-black/5 py-8 text-center text-sm text-gray-400">
-    © 2026 Connecting. Todos los derechos reservados.
+  <footer class="site-footer site-footer--compact">
+    <div class="mx-auto max-w-3xl px-4 py-12">
+      <div class="footer-grid">
+        <!-- Marca -->
+        <div class="footer-brand">
+          <a href="index.html"><img src="imagenes/logo.webp" alt="Connecting" width="500" height="282" loading="lazy" class="footer-logo" /></a>
+          <p class="footer-about">
+            Connecting es un revendedor autorizado independiente que compara opciones de internet, televisión y
+            telefonía disponibles en tu zona y facilita el proceso de contratación en español. No somos una compañía
+            proveedora de telecomunicaciones. La disponibilidad, instalación, facturación y soporte corresponden
+            directamente al proveedor seleccionado.
+          </p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="footer-nav">
+          <h4 class="footer-heading">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#planes">Planes</a></li>
+            <li><a href="index.html#como-funciona">¿Cómo funciona?</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Enlaces legales -->
+        <div class="footer-legal">
+          <h4 class="footer-heading">Enlaces legales</h4>
+          <ul class="footer-links">
+            <li><a href="ayuda.html">Centro de ayuda</a></li>
+            <li><a href="privacidad.html">Política de privacidad</a></li>
+            <li><a href="terminos.html">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="footer-contact">
+          <h4 class="footer-heading">Datos de contacto</h4>
+          <dl>
+            <dt>Teléfono:</dt>
+            <dd><a href="tel:8882951378">(888) 295-1378</a></dd>
+            <dt>Horario de atención:</dt>
+            <dd>Lunes a Domingo, 8am - 9pm</dd>
+          </dl>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© <span data-year>2026</span> Connecting. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+
+  <script>document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());</script>
 </body>
 </html>

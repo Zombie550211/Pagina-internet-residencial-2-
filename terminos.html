@@ -32,11 +32,11 @@
   <link rel="apple-touch-icon" href="imagenes/apple-touch-icon.png" />
 
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body{font-family:'Inter',sans-serif}
-    h1,h2{font-family:'Plus Jakarta Sans',sans-serif}
-  </style>
+  <!-- Tipografias autohospedadas -->
+  <link rel="preload" href="fuentes/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/jakarta-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fuentes.css" />
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body class="bg-paper text-ink antialiased">
   <!-- Google Tag Manager (noscript) -->
@@ -54,44 +54,145 @@
   </header>
 
   <main class="mx-auto max-w-3xl px-4 py-12">
-    <h1 class="text-3xl font-extrabold">Términos y Condiciones</h1>
-    <p class="mt-2 text-sm text-gray-500">Última actualización: junio de 2026</p>
+    <h1 class="text-3xl font-extrabold">Términos y Condiciones de Servicio</h1>
+    <p class="mt-2 text-sm text-gray-500">Última actualización: septiembre de 2026</p>
+
+    <div class="mt-6 rounded-2xl bg-white p-5 shadow-soft ring-1 ring-black/5">
+      <ul class="space-y-1 text-sm text-gray-600">
+        <li><span class="font-semibold text-ink">Entidad legal:</span> Connecting</li>
+        <li><span class="font-semibold text-ink">Sitio oficial:</span> <a href="https://www.internetparatuhogar.com/" class="text-brand hover:underline">internetparatuhogar.com</a></li>
+        <li><span class="font-semibold text-ink">Teléfono:</span> <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a></li>
+      </ul>
+    </div>
 
     <div class="mt-8 space-y-8 text-gray-600 leading-relaxed">
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">1. Sobre Connecting</h2>
-        <p>Connecting es un revendedor autorizado independiente. No somos el proveedor de red. Actuamos como intermediario para ayudarte a verificar cobertura y contratar planes de Internet y TV residencial con atención personalizada en español.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">1. Aceptación de los términos</h2>
+        <p>Al acceder, navegar o utilizar el sitio web internetparatuhogar.com, así como al solicitar información o contratar servicios a través de nuestros asesores telefónicos o digitales, usted (“el Cliente” o “el Usuario”) acepta cumplir y estar sujeto a los presentes Términos y Condiciones.</p>
+        <p class="mt-3">Si no está de acuerdo con alguna parte de estas condiciones, deberá abstenerse de utilizar nuestro sitio web y servicios.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">2. Precios y disponibilidad</h2>
-        <p>Los precios y velocidades mostrados en este sitio son estimados y referenciales. Pueden variar según tu zona, la disponibilidad de infraestructura, impuestos, cargos del proveedor y promociones vigentes. La información mostrada no constituye una oferta vinculante; el precio final se confirma durante el proceso de contratación.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">2. Naturaleza del servicio: distribuidor e intermediario autorizado</h2>
+        <p>Connecting opera como un revendedor y distribuidor autorizado independiente de servicios de telecomunicaciones para el mercado hispano en Estados Unidos.</p>
+        <ul class="mt-3 list-disc pl-5 space-y-2">
+          <li><span class="font-semibold text-ink">Nuestra función:</span> brindamos asesoría en español, comparamos opciones de cobertura y facilitamos la gestión y contratación de servicios de internet residencial, televisión y telefonía.</li>
+          <li><span class="font-semibold text-ink">Relación con el proveedor:</span> Connecting no es un proveedor directo de infraestructura de red. El contrato final para la prestación del servicio técnico, instalación y provisión de internet, televisión o telefonía se establece directamente entre el Cliente y la compañía proveedora seleccionada.</li>
+        </ul>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">3. Uso del sitio</h2>
-        <p>Te comprometes a proporcionar información veraz en nuestros formularios y a usar el sitio únicamente con fines legítimos. Nos reservamos el derecho de modificar o suspender el contenido en cualquier momento.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">3. Procesamiento de la contratación y gestión de órdenes</h2>
+        <p>Para fines de transparencia con el usuario y las plataformas de verificación:</p>
+        <ul class="mt-3 list-disc pl-5 space-y-2">
+          <li><span class="font-semibold text-ink">Recopilación y asesoría:</span> Connecting recopila la información inicial, verifica la cobertura y prepara la orden en español.</li>
+          <li><span class="font-semibold text-ink">Procesamiento de la orden:</span> una vez confirmada la elección por el usuario, la orden se transmite directamente al sistema del proveedor de telecomunicaciones seleccionado.</li>
+          <li><span class="font-semibold text-ink">Ejecución y facturación:</span> el proveedor elegido es la única entidad responsable de coordinar la instalación física, activar la señal y emitir las facturas mensuales de cobro.</li>
+        </ul>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">4. Marcas de terceros</h2>
-        <p>Los nombres, logotipos y marcas de los proveedores mencionados pertenecen a sus respectivos propietarios y se utilizan únicamente con fines descriptivos. Su mención no implica afiliación ni patrocinio.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">4. Gratuidad del servicio de asesoría</h2>
+        <p>La asesoría, verificación de cobertura, comparación de tarifas y gestión de la solicitud realizada por Connecting es 100 % gratuita para el cliente.</p>
+        <p class="mt-3">No cobramos cargos adicionales, recargos ni comisiones por la atención de nuestros asesores.</p>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">5. Limitación de responsabilidad</h2>
-        <p>Connecting no se hace responsable por interrupciones del servicio, decisiones del proveedor de red ni por daños derivados del uso de la información de este sitio. La instalación y prestación del servicio están sujetas a los términos del proveedor correspondiente.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">5. Precios, promociones y tarifas</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><span class="font-semibold text-ink">Estimación de precios:</span> los precios, promociones, velocidades de internet y alineaciones de canales mostrados en el sitio web son estimativos y están sujetos a confirmación según la dirección exacta del cliente.</li>
+          <li><span class="font-semibold text-ink">Cambios por parte del proveedor:</span> los proveedores de telecomunicaciones se reservan el derecho de modificar sus tarifas oficiales, promociones, costos de instalación y cobros por alquiler de equipos sin previo aviso.</li>
+          <li><span class="font-semibold text-ink">Vigencia promocional:</span> las tarifas preferenciales o con descuento suelen tener una duración determinada, por ejemplo, 12 o 24 meses. Finalizado dicho periodo, la tarifa se ajustará automáticamente al precio regular del proveedor.</li>
+        </ul>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-ink mb-2">6. Contacto</h2>
-        <p>Para cualquier duda sobre estos términos, contáctanos al <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a>, de lunes a domingo de 8am a 9pm.</p>
+        <h2 class="text-xl font-bold text-ink mb-2">6. Requisitos y proceso de contratación</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><span class="font-semibold text-ink">Documentación:</span> se requiere una identificación oficial vigente. Dependiendo de las políticas del proveedor, se puede aceptar pasaporte o identificación estatal de Estados Unidos.</li>
+          <li><span class="font-semibold text-ink">Verificación de crédito:</span> según las políticas de la compañía proveedora disponible en su zona, la contratación podría requerir o no una verificación crediticia. En caso de no contar con historial en Estados Unidos, el proveedor final podría requerir un depósito de garantía reembolsable o un pago por adelantado.</li>
+          <li><span class="font-semibold text-ink">Tiempos de instalación:</span> las fechas y horarios de instalación dependen exclusivamente de la disponibilidad de la agenda técnica del proveedor en el área del cliente.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-ink mb-2">7. Deslinde de responsabilidad: soporte técnico y facturación</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><span class="font-semibold text-ink">Facturación directa:</span> las facturas son emitidas, enviadas y cobradas directamente por el proveedor de telecomunicaciones correspondiente, no por Connecting.</li>
+          <li><span class="font-semibold text-ink">Servicio técnico e interrupciones:</span> Connecting no se hace responsable por interrupciones de señal, cortes de fibra o cable, fallas en equipos como módems o routers, ni por problemas de velocidad o estabilidad de la conexión.</li>
+          <li>Nuestro equipo puede brindar orientación general en español para ayudar al cliente a identificar el canal de soporte de su proveedor.</li>
+          <li>Las cancelaciones, devoluciones, reembolsos, reparaciones, soporte técnico y reclamaciones posteriores a la activación o instalación deben gestionarse directamente con el proveedor seleccionado.</li>
+        </ul>
+      </section>
+
+      <section class="rounded-2xl bg-brand-50 p-5">
+        <h2 class="text-xl font-bold text-ink mb-2">Aviso de independencia</h2>
+        <p>Connecting es un revendedor autorizado independiente. No somos una compañía proveedora de internet, televisión o telefonía.</p>
+        <p class="mt-3">Los precios, promociones, velocidades, servicios y demás condiciones se encuentran sujetos a disponibilidad y confirmación por parte del proveedor seleccionado.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-ink mb-2">Contacto</h2>
+        <ul class="space-y-1">
+          <li><span class="font-semibold text-ink">Teléfono:</span> <a href="tel:8882951378" class="text-brand hover:underline">(888) 295-1378</a></li>
+          <li><span class="font-semibold text-ink">Sitio web:</span> <a href="https://www.internetparatuhogar.com/" class="text-brand hover:underline">internetparatuhogar.com</a></li>
+        </ul>
       </section>
     </div>
   </main>
 
-  <footer class="border-t border-black/5 py-8 text-center text-sm text-gray-400">
-    © 2026 Connecting. Todos los derechos reservados.
+  <footer class="site-footer site-footer--compact">
+    <div class="mx-auto max-w-3xl px-4 py-12">
+      <div class="footer-grid">
+        <!-- Marca -->
+        <div class="footer-brand">
+          <a href="index.html"><img src="imagenes/logo.webp" alt="Connecting" width="500" height="282" loading="lazy" class="footer-logo" /></a>
+          <p class="footer-about">
+            Connecting es un revendedor autorizado independiente que compara opciones de internet, televisión y
+            telefonía disponibles en tu zona y facilita el proceso de contratación en español. No somos una compañía
+            proveedora de telecomunicaciones. La disponibilidad, instalación, facturación y soporte corresponden
+            directamente al proveedor seleccionado.
+          </p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="footer-nav">
+          <h4 class="footer-heading">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#planes">Planes</a></li>
+            <li><a href="index.html#como-funciona">¿Cómo funciona?</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Enlaces legales -->
+        <div class="footer-legal">
+          <h4 class="footer-heading">Enlaces legales</h4>
+          <ul class="footer-links">
+            <li><a href="ayuda.html">Centro de ayuda</a></li>
+            <li><a href="privacidad.html">Política de privacidad</a></li>
+            <li><a href="terminos.html">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="footer-contact">
+          <h4 class="footer-heading">Datos de contacto</h4>
+          <dl>
+            <dt>Teléfono:</dt>
+            <dd><a href="tel:8882951378">(888) 295-1378</a></dd>
+            <dt>Horario de atención:</dt>
+            <dd>Lunes a Domingo, 8am - 9pm</dd>
+          </dl>
+        </div>
+      </div>
+
+      <p class="footer-bottom">© <span data-year>2026</span> Connecting. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+
+  <script>document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());</script>
 </body>
 </html>

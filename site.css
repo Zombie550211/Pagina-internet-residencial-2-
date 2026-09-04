@@ -1,0 +1,91 @@
+/* Estilos propios del sitio. Complementan styles.css (build purgado de Tailwind,
+   que solo contiene las utilidades presentes en el HTML). */
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+.eyebrow { letter-spacing: .12em; }
+
+/* styles.css no incluye list-decimal */
+.list-decimal { list-style-type: decimal; }
+
+/* Acordeón del FAQ */
+.faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item[open] .faq-body { max-height: 240px; }
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+.faq-chevron { transition: transform .3s ease; }
+summary::-webkit-details-marker { display: none; }
+
+/* Oculta la barra de scroll en los testimonios (móvil) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Barra flotante "Llama Ya" */
+.float-cta {
+  left: 1rem; right: 1rem; bottom: 1rem;
+  display: flex; align-items: center; justify-content: center; gap: .625rem;
+  border-radius: .875rem; padding: 1rem 1.25rem;
+  box-shadow: 0 12px 30px -8px rgba(0,0,0,.45);
+}
+.float-cta__num { font-weight: 700; letter-spacing: 0; }
+@media (min-width: 1024px) {
+  .float-cta { left: 50%; right: auto; transform: translateX(-50%); width: min(80rem, calc(100% - 3rem)); }
+}
+
+/* Footer */
+.site-footer { background: #111112; color: #fff; padding-bottom: 6rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.25rem 1.5rem; }
+.footer-brand, .footer-contact { grid-column: 1 / -1; }
+.footer-logo { height: 2.75rem; width: auto; filter: brightness(0) invert(1); }
+.footer-about { margin-top: 1.125rem; font-size: .875rem; line-height: 1.7; color: #9ca3af; }
+.footer-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8125rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .06em; color: #fff; margin-bottom: 1.125rem;
+}
+.footer-links li + li { margin-top: .875rem; }
+.footer-links a { font-size: .9375rem; color: #9ca3af; transition: color .15s ease; }
+.footer-links a:hover { color: #f15a24; }
+.footer-contact dt { font-size: .875rem; font-weight: 700; color: #fff; }
+.footer-contact dd { margin-top: .25rem; font-size: .875rem; color: #9ca3af; }
+.footer-contact dd + dt { margin-top: 1.125rem; }
+.footer-contact a:hover { color: #f15a24; }
+.footer-bottom {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.08);
+  text-align: center; font-size: .8125rem; color: #6b7280;
+}
+@media (min-width: 640px) {
+  .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+  .footer-contact { grid-column: auto; }
+}
+@media (min-width: 1024px) {
+  .site-footer { padding-bottom: 5rem; }
+  .footer-grid { grid-template-columns: 1.7fr 1fr 1.1fr 1.2fr; gap: 3rem; }
+  .footer-brand { grid-column: auto; }
+}
+
+/* Variante para las páginas internas: contenedor estrecho y sin barra flotante,
+   así que se queda en 3 columnas con la marca arriba. */
+.site-footer--compact { padding-bottom: 0; }
+@media (min-width: 1024px) {
+  .site-footer--compact { padding-bottom: 0; }
+  .site-footer--compact .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+  .site-footer--compact .footer-brand { grid-column: 1 / -1; }
+}
+
+/* Paginas internas que si llevan la barra flotante */
+.site-footer--cta { padding-bottom: 6rem; }
+@media (min-width: 1024px) { .site-footer--cta { padding-bottom: 5rem; } }
+
+/* Centro de ayuda */
+.help-toc { display: grid; gap: .5rem 1.5rem; }
+.help-toc a { color: #4b5563; font-size: .875rem; }
+.help-toc a:hover { color: #f15a24; }
+@media (min-width: 640px) { .help-toc { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.table-wrap { overflow-x: auto; }
+.help-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.help-table th, .help-table td { text-align: left; padding: .75rem 1rem; border-bottom: 1px solid rgba(0,0,0,.06); vertical-align: top; }
+.help-table th { background: #fff4ef; color: #1a1a1a; font-weight: 700; }
+.help-table td:first-child { color: #1a1a1a; font-weight: 600; }
+.help-table tr:last-child td { border-bottom: 0; }
